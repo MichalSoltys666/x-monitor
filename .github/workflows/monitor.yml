@@ -1,0 +1,34 @@
+name: X-Monitor Robot
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
+
+jobs:
+  run-monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Stáhnutí souborů
+        uses: actions/checkout@v4
+
+      - name: Příprava Pythonu
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Instalace knihoven
+        run: pip install -r requirements.txt
+
+      - name: Spuštění skriptu
+        env:
+          X_COOKIES: ${{ secrets.X_COOKIES }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python monitor.py
+
+      - name: Uložení výsledků
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data.json || true
+          git commit -m "Automatická aktualizace z X" || echo "Nic nového"
+          git push
