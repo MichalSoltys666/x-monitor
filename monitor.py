@@ -42,6 +42,7 @@ def build_search_url(config):
     query = "(" + " OR ".join(terms) + ") -filter:retweets (lang:cs OR lang:sk)"
     import urllib.parse
     encoded_query = urllib.parse.quote(query)
+    # Vynucení živého vysílání (nejnovější) přímo v URL
     return f"https://x.com/search?q={encoded_query}&f=live"
 
 def find_matched_keyword(text, config):
@@ -64,7 +65,7 @@ def send_to_discord(tweet, webhook_url):
     tweet_url = f"https://x.com/{tweet['author']}/status/{tweet['id']}"
     payload = {
         "embeds": [{
-            "title": "🚨 Nová zmínka na X (CZ/SK)!",
+            "title": "🚨 Nová zmínka na X (CZ/SK - Nejnovější)!",
             "url": tweet_url,
             "color": 4193236,
             "description": tweet["text"],
@@ -121,7 +122,6 @@ def main():
     discord_webhook = os.getenv("DISCORD_WEBHOOK_URL")
 
     with sync_playwright() as p:
-        # Spuštění s dalšími parametry proti detekci
         browser = p.chromium.launch(
             headless=True,
             args=["--disable-blink-features=AutomationControlled", "--no-sandbox"]
@@ -143,21 +143,29 @@ def main():
         try:
             print("Načítám hlavní stránku...")
             page.goto("https://x.com", timeout=60000)
-            page.wait_for_timeout(5000)
+            page.wait_for_timeout(4000)
             
             print("Načítám výsledky hledání...")
             page.goto(search_url, timeout=60000)
-            
-            # Pro jistotu chvíli počkáme a zkusíme posunout stránku, aby se obsah vykreslil
-            page.wait_for_timeout(5000)
+            page.wait_for_timeout(4000)
+
+            # Jistota: Pokusíme se v rozhraní najít záložku "Nejnovější" / "Latest" a kliknout na ni
+            try:
+                latest_tab = page.locator('text=Nejnovější').or_(page.locator('text=Latest'))
+                if latest_tab.count() > 0:
+                    latest_tab.first.click()
+                    print("Přepnuto na záložku Nejnovější.")
+                    page.wait_for_timeout(3000)
+            except Exception:
+                pass
+
             page.evaluate("window.scrollBy(0, 1000)")
             page.wait_for_timeout(3000)
 
-            # Pokusíme se najít tweety, s delším timeoutem
             try:
                 page.wait_for_selector('article[data-testid="tweet"]', timeout=20000)
             except Exception:
-                print("Varování: Časový limit pro nalezení tweetů vypršel, zkusím zkontrolovat stránku...")
+                print("Varování: Časový limit pro nalezení tweetů vypršel.")
 
             articles = page.locator('article[data-testid="tweet"]').all()
             print(f"Nalezeno tweetů na stránce: {len(articles)}")
