@@ -120,7 +120,6 @@ def main():
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
         
-        # Načtení cookies do prohlížeče
         try:
             with open(COOKIES_FILE, 'r', encoding='utf-8') as f:
                 cookies_data = json.load(f)
@@ -135,33 +134,27 @@ def main():
             page.wait_for_timeout(3000)
             
             page.goto(search_url, timeout=60000)
-            # Počkáme, až se na stránce načtou tweety (články)
             page.wait_for_selector('article[data-testid="tweet"]', timeout=15000)
             
-            # Jemné posunutí dolů pro načtení víc tweetů
             page.evaluate("window.scrollBy(0, 800)")
             page.wait_for_timeout(3000)
 
             articles = page.locator('article[data-testid="tweet"]').all()
-            print Nalezeno tweetů na stránce: {len(articles)}
+            print(f"Nalezeno tweetů na stránce: {len(articles)}")
 
             for article in articles:
                 try:
-                    # Zjištění textu tweetu
                     text_el = article.locator('[data-testid="tweetText"]')
                     tweet_text = text_el.inner_text() if text_el.count() > 0 else ""
 
-                    # Zjištění autora
                     user_el = article.locator('[data-testid="User-Name"]')
                     user_text = user_el.inner_text() if user_el.count() > 0 else ""
-                    # Z uživatelského bloku vytáhneme handle (např. @Jmeno)
                     author = "neznnamy"
                     for line in user_text.split('\n'):
                         if line.startswith('@'):
                             author = line.replace('@', '').strip()
                             break
 
-                    # Zjištění odkazu / ID tweetu z URL tlačítka času
                     time_el = article.locator('time').locator('xpath=ancestor::a')
                     tweet_id = "0"
                     if time_el.count() > 0:
