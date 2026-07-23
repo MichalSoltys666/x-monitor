@@ -1,9 +1,8 @@
 import json
 import os
 import requests
-import asyncio
 from datetime import datetime
-from twifork import Client
+from playwright.sync_api import sync_playwright
 
 CONFIG_FILE = 'nastaveni.json'
 DATA_FILE = 'data.json'
@@ -30,25 +29,22 @@ def save_data(data):
     with open(DATA_FILE, 'w', encoding='utf-8') as f:
         json.dump(limited_data, f, indent=2, ensure_ascii=False)
 
-def build_query(config):
+def build_search_url(config):
     profiles = config.get("sledovane_profily", [])
     keywords = config.get("klicova_slova", [])
-    clean_profiles = [p.replace('@', '').strip() for p in profiles]
     
     terms = []
     for p in profiles:
         terms.append(p)
-        name_only = p.replace('@', '').replace('_', ' ')
-        terms.append(f'"{name_only}"')
-        
     for k in keywords:
         terms.append(f'"{k}"')
         
-    query_terms = " OR ".join(terms)
-    exclusions = " ".join([f"-from:{p}" for p in clean_profiles])
-    return f"({query_terms}) {exclusions} -filter:retweets"
+    query = " OR ".join(terms) + " -filter:retweets"
+    import urllib.parse
+    encoded_query = urllib.parse.quote(query)
+    return f"https://x.com/search?q={encoded_query}&f=live"
 
-def find_matched_keyword(text, author, config):
+def find_matched_keyword(text, config):
     text_lower = text.lower()
     for profile in config.get("sledovane_profily", []):
         if profile.lower() in text_lower or profile.lower().replace('@', '') in text_lower:
@@ -57,15 +53,6 @@ def find_matched_keyword(text, author, config):
         if kw.lower() in text_lower:
             return kw
     return "Obecná zmínka"
-
-def parse_twitter_date(created_at):
-    if isinstance(created_at, datetime):
-        return created_at.isoformat()
-    try:
-        parsed = datetime.strptime(created_at, "%a %b %d %H:%M:%S %z %Y")
-        return parsed.isoformat()
-    except Exception:
-        return datetime.utcnow().isoformat()
 
 def send_to_discord(tweet, webhook_url):
     if not webhook_url:
@@ -81,7 +68,7 @@ def send_to_discord(tweet, webhook_url):
                 {"name": "Autor", "value": f"[@{tweet['author']}](https://x.com/{tweet['author']})", "inline": True},
                 {"name": "Zachycené téma", "value": tweet.get("matched_keyword", "Neznámý"), "inline": True}
             ],
-            "footer": {"text": "X-Monitor | Kliknutím na nadpis otevřeš tweet"},
+            "footer": {"text": "X-Monitor (Playwright) | Kliknutím otevřeš tweet"},
             "timestamp": datetime.utcnow().isoformat()
         }]
     }
@@ -90,77 +77,124 @@ def send_to_discord(tweet, webhook_url):
     except Exception:
         pass
 
-async def main():
+def main():
     env_cookies = os.getenv("X_COOKIES")
     if env_cookies:
         try:
             raw_data = json.loads(env_cookies)
-            # Pokud přišly cookies jako list od prohlížeče, uděláme z nich slovník
             if isinstance(raw_data, list):
-                cookie_dict = {c['name']: c['value'] for c in raw_data if 'name' in c and 'value' in c}
+                cookie_dict = []
+                for c in raw_data:
+                    if 'name' in c and 'value' in c:
+                        cookie_item = {
+                            'name': c['name'],
+                            'value': c['value'],
+                            'domain': c.get('domain', '.x.com'),
+                            'path': c.get('path', '/')
+                        }
+                        cookie_dict.append(cookie_item)
+                with open(COOKIES_FILE, 'w', encoding='utf-8') as f:
+                    json.dump(cookie_dict, f, ensure_ascii=False)
             else:
-                cookie_dict = raw_data
-            with open(COOKIES_FILE, 'w', encoding='utf-8') as f:
-                json.dump(cookie_dict, f, ensure_ascii=False)
+                with open(COOKIES_FILE, 'w', encoding='utf-8') as f:
+                    f.write(env_cookies)
         except Exception:
             with open(COOKIES_FILE, 'w', encoding='utf-8') as f:
                 f.write(env_cookies)
-                
+
     if not os.path.exists(COOKIES_FILE):
         print("Chyba: Cookies nebyly nalezeny.")
-        return
-
-    # Pro jistotu ověříme soubor i před načtením
-    try:
-        with open(COOKIES_FILE, 'r', encoding='utf-8') as f:
-            content = json.load(f)
-        if isinstance(content, list):
-            cookie_dict = {c['name']: c['value'] for c in content if 'name' in c and 'value' in c}
-            with open(COOKIES_FILE, 'w', encoding='utf-8') as f:
-                json.dump(cookie_dict, f, ensure_ascii=False)
-    except Exception:
-        pass
-
-    client = Client('en-US')
-    try:
-        client.load_cookies(COOKIES_FILE)
-    except Exception as e:
-        print(f"Chyba přihlášení: {e}")
         return
 
     config = load_config()
     existing_tweets = load_existing_data()
     existing_ids = {t['id'] for t in existing_tweets}
     
-    query = build_query(config)
-    
-    try:
-        results = await client.search_tweet(query, product='Latest')
-    except Exception as e:
-        print(f"Chyba vyhledávání: {e}")
-        return
+    search_url = build_search_url(config)
+    print(f"Otevírám URL: {search_url}")
 
     new_tweets_count = 0
     discord_webhook = os.getenv("DISCORD_WEBHOOK_URL")
 
-    for tweet in results:
-        if tweet.id in existing_ids:
-            continue
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+        
+        # Načtení cookies do prohlížeče
+        try:
+            with open(COOKIES_FILE, 'r', encoding='utf-8') as f:
+                cookies_data = json.load(f)
+                if isinstance(cookies_data, list):
+                    context.add_cookies(cookies_data)
+        except Exception as e:
+            print(f"Varování při načítání cookies: {e}")
+
+        page = context.new_page()
+        try:
+            page.goto("https://x.com", timeout=60000)
+            page.wait_for_timeout(3000)
             
-        matched_kw = find_matched_keyword(tweet.text, tweet.user.screen_name, config)
-        new_tweet_entry = {
-            "id": tweet.id,
-            "author": tweet.user.screen_name,
-            "text": tweet.text,
-            "timestamp": parse_twitter_date(tweet.created_at),
-            "matched_keyword": matched_kw
-        }
-        existing_tweets.append(new_tweet_entry)
-        new_tweets_count += 1
-        send_to_discord(new_tweet_entry, discord_webhook)
+            page.goto(search_url, timeout=60000)
+            # Počkáme, až se na stránce načtou tweety (články)
+            page.wait_for_selector('article[data-testid="tweet"]', timeout=15000)
+            
+            # Jemné posunutí dolů pro načtení víc tweetů
+            page.evaluate("window.scrollBy(0, 800)")
+            page.wait_for_timeout(3000)
+
+            articles = page.locator('article[data-testid="tweet"]').all()
+            print Nalezeno tweetů na stránce: {len(articles)}
+
+            for article in articles:
+                try:
+                    # Zjištění textu tweetu
+                    text_el = article.locator('[data-testid="tweetText"]')
+                    tweet_text = text_el.inner_text() if text_el.count() > 0 else ""
+
+                    # Zjištění autora
+                    user_el = article.locator('[data-testid="User-Name"]')
+                    user_text = user_el.inner_text() if user_el.count() > 0 else ""
+                    # Z uživatelského bloku vytáhneme handle (např. @Jmeno)
+                    author = "neznnamy"
+                    for line in user_text.split('\n'):
+                        if line.startswith('@'):
+                            author = line.replace('@', '').strip()
+                            break
+
+                    # Zjištění odkazu / ID tweetu z URL tlačítka času
+                    time_el = article.locator('time').locator('xpath=ancestor::a')
+                    tweet_id = "0"
+                    if time_el.count() > 0:
+                        href = time_el.get_attribute('href')
+                        if href and '/status/' in href:
+                            tweet_id = href.split('/status/')[-1].split('/')[0]
+
+                    if tweet_id != "0" and tweet_id not in existing_ids:
+                        matched_kw = find_matched_keyword(tweet_text, config)
+                        new_tweet_entry = {
+                            "id": tweet_id,
+                            "author": author,
+                            "text": tweet_text,
+                            "timestamp": datetime.utcnow().isoformat(),
+                            "matched_keyword": matched_kw
+                        }
+                        existing_tweets.append(new_tweet_entry)
+                        existing_ids.add(tweet_id)
+                        new_tweets_count += 1
+                        send_to_discord(new_tweet_entry, discord_webhook)
+                except Exception as ex:
+                    print(f"Chyba při parsování jednoho tweetu: {ex}")
+
+        except Exception as e:
+            print(f"Chyba při načítání stránky v prohlížeči: {e}")
+        finally:
+            browser.close()
 
     if new_tweets_count > 0:
         save_data(existing_tweets)
+        print(f"Uloženo {new_tweets_count} nových tweetů.")
+    else:
+        print("Žádné nové tweety k uložení.")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
