@@ -1,6 +1,7 @@
 import json
 import os
 import requests
+import asyncio
 from datetime import datetime
 from twikit import Client
 
@@ -89,7 +90,7 @@ def send_to_discord(tweet, webhook_url):
     except Exception:
         pass
 
-def main():
+async def main():
     env_cookies = os.getenv("X_COOKIES")
     if env_cookies:
         with open(COOKIES_FILE, 'w', encoding='utf-8') as f:
@@ -113,7 +114,7 @@ def main():
     query = build_query(config)
     
     try:
-        results = client.search_tweet(query, product='Latest')
+        results = await client.search_tweet(query, product='Latest')
     except Exception as e:
         print(f"Chyba vyhledávání: {e}")
         return
@@ -141,4 +142,4 @@ def main():
         save_data(existing_tweets)
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
