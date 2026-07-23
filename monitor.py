@@ -42,7 +42,6 @@ def build_search_url(config):
     query = "(" + " OR ".join(terms) + ") -filter:retweets (lang:cs OR lang:sk)"
     import urllib.parse
     encoded_query = urllib.parse.quote(query)
-    # Vynucení živého vysílání (nejnovější) přímo v URL
     return f"https://x.com/search?q={encoded_query}&f=live"
 
 def find_matched_keyword(text, config):
@@ -149,7 +148,6 @@ def main():
             page.goto(search_url, timeout=60000)
             page.wait_for_timeout(4000)
 
-            # Jistota: Pokusíme se v rozhraní najít záložku "Nejnovější" / "Latest" a kliknout na ni
             try:
                 latest_tab = page.locator('text=Nejnovější').or_(page.locator('text=Latest'))
                 if latest_tab.count() > 0:
@@ -159,8 +157,11 @@ def main():
             except Exception:
                 pass
 
-            page.evaluate("window.scrollBy(0, 1000)")
-            page.wait_for_timeout(3000)
+            # Vícenásobné scrollování dolů pro načtení většího množství tweetů
+            print("Načítám starší tweety rolováním...")
+            for i in range(4): # Sroluje dolů 4krát za sebou
+                page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                page.wait_for_timeout(3000)
 
             try:
                 page.wait_for_selector('article[data-testid="tweet"]', timeout=20000)
@@ -168,7 +169,7 @@ def main():
                 print("Varování: Časový limit pro nalezení tweetů vypršel.")
 
             articles = page.locator('article[data-testid="tweet"]').all()
-            print(f"Nalezeno tweetů na stránce: {len(articles)}")
+            print(f"Nalezeno tweetů na stránce po rolování: {len(articles)}")
 
             for article in articles:
                 try:
