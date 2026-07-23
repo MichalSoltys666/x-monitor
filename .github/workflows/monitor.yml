@@ -19,7 +19,8 @@ jobs:
       - name: Instalace knihoven
         run: |
           python -m pip install --upgrade pip
-          pip install --upgrade twikit requests
+          pip install -r requirements.txt
+          playwright install chromium
 
       - name: Spuštění skriptu
         env:
