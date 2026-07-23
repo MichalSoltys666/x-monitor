@@ -29,6 +29,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git pull --rebase origin main || true
           git add data.json || true
           git commit -m "Automatická aktualizace z X" || echo "Nic nového"
           git push
