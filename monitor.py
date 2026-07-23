@@ -1,7 +1,7 @@
 import json
 import os
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from playwright.sync_api import sync_playwright
 
 CONFIG_FILE = 'nastaveni.json'
@@ -39,7 +39,7 @@ def build_search_url(config):
     for k in keywords:
         terms.append(f'"{k}"')
         
-    query = " OR ".join(terms) + " -filter:retweets"
+    query = "(" + " OR ".join(terms) + ") -filter:retweets (lang:cs OR lang:sk)"
     import urllib.parse
     encoded_query = urllib.parse.quote(query)
     return f"https://x.com/search?q={encoded_query}&f=live"
@@ -54,13 +54,17 @@ def find_matched_keyword(text, config):
             return kw
     return "Obecná zmínka"
 
+def get_local_timestamp():
+    local_tz = timezone(timedelta(hours=2))
+    return datetime.now(local_tz).isoformat()
+
 def send_to_discord(tweet, webhook_url):
     if not webhook_url:
         return
     tweet_url = f"https://x.com/{tweet['author']}/status/{tweet['id']}"
     payload = {
         "embeds": [{
-            "title": "🚨 Nová zmínka na X!",
+            "title": "🚨 Nová zmínka na X (CZ/SK)!",
             "url": tweet_url,
             "color": 4193236,
             "description": tweet["text"],
@@ -69,7 +73,7 @@ def send_to_discord(tweet, webhook_url):
                 {"name": "Zachycené téma", "value": tweet.get("matched_keyword", "Neznámý"), "inline": True}
             ],
             "footer": {"text": "X-Monitor (Playwright) | Kliknutím otevřeš tweet"},
-            "timestamp": datetime.utcnow().isoformat()
+            "timestamp": get_local_timestamp()
         }]
     }
     try:
@@ -117,8 +121,15 @@ def main():
     discord_webhook = os.getenv("DISCORD_WEBHOOK_URL")
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        context = browser.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+        # Spuštění s dalšími parametry proti detekci
+        browser = p.chromium.launch(
+            headless=True,
+            args=["--disable-blink-features=AutomationControlled", "--no-sandbox"]
+        )
+        context = browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+            viewport={"width": 1280, "height": 800}
+        )
         
         try:
             with open(COOKIES_FILE, 'r', encoding='utf-8') as f:
@@ -130,14 +141,23 @@ def main():
 
         page = context.new_page()
         try:
+            print("Načítám hlavní stránku...")
             page.goto("https://x.com", timeout=60000)
-            page.wait_for_timeout(3000)
+            page.wait_for_timeout(5000)
             
+            print("Načítám výsledky hledání...")
             page.goto(search_url, timeout=60000)
-            page.wait_for_selector('article[data-testid="tweet"]', timeout=15000)
             
-            page.evaluate("window.scrollBy(0, 800)")
+            # Pro jistotu chvíli počkáme a zkusíme posunout stránku, aby se obsah vykreslil
+            page.wait_for_timeout(5000)
+            page.evaluate("window.scrollBy(0, 1000)")
             page.wait_for_timeout(3000)
+
+            # Pokusíme se najít tweety, s delším timeoutem
+            try:
+                page.wait_for_selector('article[data-testid="tweet"]', timeout=20000)
+            except Exception:
+                print("Varování: Časový limit pro nalezení tweetů vypršel, zkusím zkontrolovat stránku...")
 
             articles = page.locator('article[data-testid="tweet"]').all()
             print(f"Nalezeno tweetů na stránce: {len(articles)}")
@@ -168,7 +188,7 @@ def main():
                             "id": tweet_id,
                             "author": author,
                             "text": tweet_text,
-                            "timestamp": datetime.utcnow().isoformat(),
+                            "timestamp": get_local_timestamp(),
                             "matched_keyword": matched_kw
                         }
                         existing_tweets.append(new_tweet_entry)
@@ -179,7 +199,7 @@ def main():
                     print(f"Chyba při parsování jednoho tweetu: {ex}")
 
         except Exception as e:
-            print(f"Chyba při načítání stránky v prohlížeči: {e}")
+            print(f"Chyba při práci v prohlížeči: {e}")
         finally:
             browser.close()
 
