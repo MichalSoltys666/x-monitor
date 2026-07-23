@@ -3,7 +3,7 @@ import os
 import requests
 import asyncio
 from datetime import datetime
-from twikit import Client
+from twifork import Client
 
 CONFIG_FILE = 'nastaveni.json'
 DATA_FILE = 'data.json'
