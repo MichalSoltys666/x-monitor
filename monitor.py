@@ -93,12 +93,33 @@ def send_to_discord(tweet, webhook_url):
 async def main():
     env_cookies = os.getenv("X_COOKIES")
     if env_cookies:
-        with open(COOKIES_FILE, 'w', encoding='utf-8') as f:
-            f.write(env_cookies)
+        try:
+            raw_data = json.loads(env_cookies)
+            # Pokud přišly cookies jako list od prohlížeče, uděláme z nich slovník
+            if isinstance(raw_data, list):
+                cookie_dict = {c['name']: c['value'] for c in raw_data if 'name' in c and 'value' in c}
+            else:
+                cookie_dict = raw_data
+            with open(COOKIES_FILE, 'w', encoding='utf-8') as f:
+                json.dump(cookie_dict, f, ensure_ascii=False)
+        except Exception:
+            with open(COOKIES_FILE, 'w', encoding='utf-8') as f:
+                f.write(env_cookies)
                 
     if not os.path.exists(COOKIES_FILE):
         print("Chyba: Cookies nebyly nalezeny.")
         return
+
+    # Pro jistotu ověříme soubor i před načtením
+    try:
+        with open(COOKIES_FILE, 'r', encoding='utf-8') as f:
+            content = json.load(f)
+        if isinstance(content, list):
+            cookie_dict = {c['name']: c['value'] for c in content if 'name' in c and 'value' in c}
+            with open(COOKIES_FILE, 'w', encoding='utf-8') as f:
+                json.dump(cookie_dict, f, ensure_ascii=False)
+    except Exception:
+        pass
 
     client = Client('en-US')
     try:
