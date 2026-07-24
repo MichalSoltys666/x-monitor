@@ -1,5 +1,12 @@
 [
   {
+    "id": "2080287420486971583",
+    "author": "demoblok",
+    "text": "Tak ten lepší život zařídili asi Piráti, kteří v Praze vládnou 8 let ",
+    "timestamp": "2026-07-24T06:31:23.436641+02:00",
+    "matched_keyword": "Piráti"
+  },
+  {
     "id": "2080284260481597659",
     "author": "piratipraha",
     "text": "Hm, nová doba. Výsledky už nemá mít koalice, ale opozice .",
@@ -691,12 +698,5 @@
     "text": "Piráti prověřují dravost čerstvých sil.  Která z nových tváří podle vás nejvíc zamíchá kartami v sestavě? \n\n Michal Fiala\n\n#maxaliga | #maxanovinky",
     "timestamp": "2026-07-23T09:44:02.807905+02:00",
     "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2079895176147857744",
-    "author": "PiratiHradec",
-    "text": "O finančním podvodu, jehož terčem se stala Správa nemovitostí Hradec Králové, jste už určitě slyšeli. Škoda byla vyčíslena na 46 milionů korun. V návaznosti na tuto kauzu dnes rezignovala ředitelka této organizace.",
-    "timestamp": "2026-07-23T09:44:02.567153+02:00",
-    "matched_keyword": "Obecná zmínka"
   }
 ]
