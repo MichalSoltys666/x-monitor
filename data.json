@@ -1,5 +1,19 @@
 [
   {
+    "id": "2082892970240405639",
+    "author": "NislerovaTereza",
+    "text": "U Václavského náměstí se počítalo s tramvají už od Béma a Piráti propojení Nového Města a Vinohrad vždy podporovali.",
+    "timestamp": "2026-07-31T10:01:34.687252+02:00",
+    "matched_keyword": "Piráti"
+  },
+  {
+    "id": "2082893753191206962",
+    "author": "MarekStonis",
+    "text": "Je fajn si psát s Piráty. Takže si to shrňme:\n1) O vykácení stromů na Náměstí Jiřího z Poděbrad a jeho vydláždění nerozhodla radnice Prahy 3 (Piráti), ale velká radnice (Piráti).\n2) Místo cyklopruhů na magistrále staví Správa železnic buspruhy. Můžu se zeptat, proč? Metro pod",
+    "timestamp": "2026-07-31T10:01:34.230394+02:00",
+    "matched_keyword": "Piráti"
+  },
+  {
     "id": "2082885160291209298",
     "author": "NotosPotos",
     "text": "Piráti nemyslí. Jen kolem sebe prostředí zaplevelují prázdnými hesly a otravují s cedulemi \"MÁME PLÁN\" (i když mají prd)",
@@ -684,19 +698,5 @@
     "text": "...Piráti dnes na tiskové konferenci představili plán na ochranu Prahy před extrémními vedry...\n\n- zakážeme slunce...",
     "timestamp": "2026-07-30T18:01:39.613498+02:00",
     "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2082783811956265054",
-    "author": "TMazlik",
-    "text": "Pýcha předchází pád.",
-    "timestamp": "2026-07-30T18:01:39.331121+02:00",
-    "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2082784737509155203",
-    "author": "OndrejSnajdr",
-    "text": "Za vás v praze chcípla i živá lavečka kde stačilo doplnit vodu tak jednou za měsíc  to vše stojí spoustu nákladů na údržbu. Efektivnějsí by bylo stavět více do výšky a ušetřený prostor věnovat na větší zelené plocha a parkoviště se zelení. Měnit to co je, je drahé a neefektivní",
-    "timestamp": "2026-07-30T18:01:38.876065+02:00",
-    "matched_keyword": "Obecná zmínka"
   }
 ]
