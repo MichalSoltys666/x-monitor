@@ -1,5 +1,47 @@
 [
   {
+    "id": "2083221792244576575",
+    "author": "Bestie_se_smeje",
+    "text": "Tam, kde nejsou na radnici, se nic neudělalo, protože tam vládli Piráti. A tam, kde byli na radnici, se nic neudělalo, protože to blokovali Piráti!",
+    "timestamp": "2026-08-01T10:57:15.677237+02:00",
+    "matched_keyword": "Piráti"
+  },
+  {
+    "id": "2083221792466841658",
+    "author": "VilemPB",
+    "text": "Nenávist části občanů je obrovská , když v mediích slyšíte opozici tak se ani nedivím , prohru ve volbách neunesli ani media a že pro opozici dělali co se dalo , také je třeba dotáhnou nějakou kauzu do konce .",
+    "timestamp": "2026-08-01T10:57:15.377298+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2083224160537391132",
+    "author": "humanizator_21",
+    "text": "Kdyby si Fiala nevzal do vlády Blažka, nebo ho aspoň vyrazil po chlastačce s Nejedlým, kdybyste bojovali s dezinformacemi a všechny vládní strany dodržovali protikorupční kodex, který mají Piráti, nemuseli jste ty volby prohrát. Trochu sebereflexe by ODS slušelo.",
+    "timestamp": "2026-08-01T10:57:15.138229+02:00",
+    "matched_keyword": "Piráti"
+  },
+  {
+    "id": "2083225561783046192",
+    "author": "ProsteBob",
+    "text": "Jste se dohodli \n@NislerovaTereza\n a \n@PiratskaStrana\n nebo budete bojovat proti sobě?",
+    "timestamp": "2026-08-01T10:57:14.880689+02:00",
+    "matched_keyword": "@PiratskaStrana"
+  },
+  {
+    "id": "2083230209394811271",
+    "author": "Jungletrouble",
+    "text": "Dobrý den, jak to dopadlo s výsadbou bambilionu stromů v Praze, kterou sliboval váš primátor?",
+    "timestamp": "2026-08-01T10:57:14.508593+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2083232519143477423",
+    "author": "jmenopetra",
+    "text": "koukla jsem na jeho tml – tam furt dokola macinka/turek/babiš, a naopak. je to úmorný. tady piráti to samý: napěchujou se do nevtipných triček . vyrobí i papírového macinku . trapnopolitici. pomoc! kde je nějaká normální strana??",
+    "timestamp": "2026-08-01T10:57:14.168338+02:00",
+    "matched_keyword": "Piráti"
+  },
+  {
     "id": "2083221512174100586",
     "author": "radekn",
     "text": "Wow! \nTakže blok ruská farmo.",
@@ -656,47 +698,5 @@
     "text": "Třeba jako MHD, dostupnost zdravotní péče a podobně je také v ČR výsadou vyvolaných. U nás v obci třeba neni MHD školala lékař, ale máme stromy a bazény na zahradách, jsme vyvolení?",
     "timestamp": "2026-07-31T16:31:32.571857+02:00",
     "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2083069840722387128",
-    "author": "Ijcro",
-    "text": "Co jste dělali doteď soudruzi námořní loupežníci? V Praze je už bezvládí? ",
-    "timestamp": "2026-07-31T16:31:32.063550+02:00",
-    "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2083070648482488492",
-    "author": "CervinkaVit",
-    "text": "Korupce možná až ve druhé či třetí řadě.   Hlavní je zelená libtardská tupost",
-    "timestamp": "2026-07-31T16:31:31.664096+02:00",
-    "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2083064459199721502",
-    "author": "Cesnekoviny",
-    "text": "Starostové, Piráti = socani a levice",
-    "timestamp": "2026-07-31T16:01:43.880853+02:00",
-    "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2083066205821173955",
-    "author": "Drahos_Prikryl",
-    "text": "vy radši vůbec nic nedělejte..  Spackali jste na co jste sáhli.",
-    "timestamp": "2026-07-31T16:01:43.406349+02:00",
-    "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2083057942207586577",
-    "author": "Standa18152836",
-    "text": "Piráti toho už představili. Bohužel na co sáhli to nefunguje a ještě způsobili rozsáhlé škody.  Kam piráti šlápnou sto let tráva neporoste.",
-    "timestamp": "2026-07-31T15:31:32.055104+02:00",
-    "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2083059753949774253",
-    "author": "Standa18152836",
-    "text": "Kam Piráti šlápli sto let tráva neporoste.",
-    "timestamp": "2026-07-31T15:31:31.833969+02:00",
-    "matched_keyword": "Piráti"
   }
 ]
