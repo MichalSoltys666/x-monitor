@@ -1,5 +1,12 @@
 [
   {
+    "id": "2090337013979357642",
+    "author": "sova670",
+    "text": "Piráti pod lupou.",
+    "timestamp": "2026-08-20T23:31:22.620254+02:00",
+    "matched_keyword": "Piráti"
+  },
+  {
     "id": "2090331782688153607",
     "author": "Vidmtojvbh",
     "text": "Mohu se zeptat co konkrétně je v tom článku lež?",
@@ -691,12 +698,5 @@
     "text": "Hm, proč takto neinterpretujete tu koalici proti suchu a považujete ji za politický marketing? Zkuste to rozvést a obhájit tak, aby z toho nebyl dvojí metr, kterým se to zatím jeví.",
     "timestamp": "2026-08-19T21:58:34.522797+02:00",
     "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2090042710317006953",
-    "author": "okurkabinladin",
-    "text": "THOMAS PAUKNER: Piráti lžou. Bartoš se zničil sám a zcela vědomě.\n\nIvana Bartoše zničil Ivan Bartoš. Chaos způsobil, že Piráti nelhali jen Úřadu pro ochranu hospodářské soutěže a veřejnosti, ale i sami sobě.\n\nBěhem éry Ivana Bartoše došlo k bizarní situaci - zástupci státu lhali",
-    "timestamp": "2026-08-19T21:31:31.641295+02:00",
-    "matched_keyword": "Piráti"
   }
 ]
