@@ -1,5 +1,12 @@
 [
   {
+    "id": "2091051872832373177",
+    "author": "MartinChladil",
+    "text": "Dobrý den,  uz vam ten déšť  stačí \n@PiratskaStrana\n  ?",
+    "timestamp": "2026-08-22T19:57:42.988403+02:00",
+    "matched_keyword": "@PiratskaStrana"
+  },
+  {
     "id": "2091047663466582419",
     "author": "Michal__Slezak",
     "text": "Jako ok. Vidite nekde, kde je plan v zakonech, case, penezich i PR komunikaci? Ja ne . Za to vidim, jak Chlad a Tykac lejou prachy do cmoudiku, pac jejich plakaty vidim casto. PR agentury jedou naplno. Z 5k vidim minimum. Na sockach trochu STAN a KDU. Pirati jen sve steky.",
@@ -691,12 +698,5 @@
     "text": "Jasně, takže ti, kteří platí málo - míň, než jaká je hodnota služeb, které čerpají, zaplatí ještě míň.\nA ten, kdo vysoce přeplácí, je nadále (či ještě více) diskriminován za píli a produktivitu.\nA pak se Piráti diví, že jim někdo nadává do komoušů s wifinou ",
     "timestamp": "2026-08-21T22:01:39.884277+02:00",
     "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2090737786227745079",
-    "author": "PiratskaStrana",
-    "text": "In 1968, Soviet troops arrived and destroyed the hope that it might be possible to live freely in this country. Today, we have brought a model tank to Radio with politicians who are currently trampling on hopes for a better future once again.\n\nThey are deliberately weakening the",
-    "timestamp": "2026-08-21T22:01:35.941157+02:00",
-    "matched_keyword": "Obecná zmínka"
   }
 ]
