@@ -1,5 +1,47 @@
 [
   {
+    "id": "2094316103056908376",
+    "author": "TomasDurco",
+    "text": "Problém kde?",
+    "timestamp": "2026-08-31T14:01:41.123480+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2094317142137057468",
+    "author": "Vtek69500859",
+    "text": "Bohužel tak to bylo a ještě několik dní nám tvrdil, že vše funguje. Pak byl asi probuzen a vyhozen. Nejhorší je, že nikdo z jeho okolí nebyl dostatečně odvážný a kvalifikovaný, aby ho včas předem varoval!",
+    "timestamp": "2026-08-31T14:01:40.837384+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2094317559415705619",
+    "author": "pettydroid",
+    "text": "Nic, pokud je to ulička bůhví kde v historickém centrum. Všechno, pokud je to páteřní výpadovka z města.",
+    "timestamp": "2026-08-31T14:01:40.439467+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2094318050715603393",
+    "author": "pettydroid",
+    "text": "Jestli to nebude tím, že v tom čase byla ještě zavřená pro auta?",
+    "timestamp": "2026-08-31T14:01:40.147904+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2094318079383650501",
+    "author": "UZpravodaj",
+    "text": "A to se tady stalo? 1 pruh byl, jeden je.",
+    "timestamp": "2026-08-31T14:01:39.846102+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2094320487954333996",
+    "author": "JarmilaS7508",
+    "text": "Díky. Ano znovu je budu volit.",
+    "timestamp": "2026-08-31T14:01:37.244455+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
     "id": "2094294525439066551",
     "author": "alb_jir",
     "text": "https://\nnovinky.cz/clanek/domaci-\nzpravy-hlavni-mesto-praha-pomala-auta-a-riziko-pro-kola-novy-cyklopruh-na-plzenske-v-praze-drazdi-sofery-i-jezdce-40594857\n…\n\n Jaromír Beránek (Piráti) argumentoval, že silnice by bez koridoru pro kola byla moc široká. A tak musela u kraje zmizet původní parkovací místa. To je prý moc málo na vyznačení dvou plnohodnotných jízdních pruhů, ale zase příliš hodně na pruh samostatný.",
@@ -655,48 +697,6 @@
     "author": "vidmancomments",
     "text": "Nějak TOP09 nevidím za ty zbrojořeči v žebříčku preferencí.",
     "timestamp": "2026-08-31T02:01:45.270740+02:00",
-    "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2094021196463366301",
-    "author": "AlbertSterba",
-    "text": "A kde je zástupce \n@PiratskaStrana\n? Když právě pro Piráty jsou aktuální ekonomická a sociální témata naprostou prioritou. Včetně nedostupného bydlení, kvalitního školství, udržitelného státního rozpočtu, zdravotnictví a sociálních služeb, důchodů a dalších.",
-    "timestamp": "2026-08-31T01:31:28.350930+02:00",
-    "matched_keyword": "@PiratskaStrana"
-  },
-  {
-    "id": "2094027382281609549",
-    "author": "MarekSamec",
-    "text": "Mají jen antibabiše a bojí se dělat vlastní politiku. Platí hlavně pro Lidovce a ODS. STAN a Piráti jsou zas až moc progresivně doleva.",
-    "timestamp": "2026-08-31T01:31:27.837101+02:00",
-    "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2094012548571877802",
-    "author": "ObcanZ",
-    "text": "Ani náhodou. Rezidentní oblasti jsou okolo. Mnohde je pak omezená rychlost na 30. Plzeňská je prostě tepna z centra na západ směr Plzeň. piráti ovšem zablokovali výstavbu Radlické radiály, která by ulevila provozu na Plzeňské.",
-    "timestamp": "2026-08-31T00:38:51.333509+02:00",
-    "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2094017348009123975",
-    "author": "CT24zive",
-    "text": "According to the Kantar electoral model, ANO would win the elections with 30.5 percent. STAN would come second with 17 percent, ODS would finish third with 15.5 percent, and Pirates with 8.5 percent, SPD with 6.5 percent, and Motorists with five percent would also enter",
-    "timestamp": "2026-08-30T23:01:34.592390+02:00",
-    "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2094020926023061742",
-    "author": "javorsky_radek",
-    "text": "@starostove_cz\n at the head of the opposition\n\n\n",
-    "timestamp": "2026-08-30T23:01:34.093240+02:00",
-    "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2093949103763865843",
-    "author": "lucynka78",
-    "text": "Pravidla sdileneho ubytovani? To jsi az tak gumovej?",
-    "timestamp": "2026-08-30T22:31:28.526723+02:00",
     "matched_keyword": "Obecná zmínka"
   }
 ]
