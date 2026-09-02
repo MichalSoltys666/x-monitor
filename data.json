@@ -1,5 +1,47 @@
 [
   {
+    "id": "2095083759800307765",
+    "author": "PiratskaStrana",
+    "text": "Více o PEER a celé znění strategie na \nhttps://\npeer.pirati.cz",
+    "timestamp": "2026-09-02T17:01:40.481707+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2095084371501777181",
+    "author": "piratipraha",
+    "text": "Slyšel někdo o Hřibovi před tím než se stal kandidátem na primátora :) Asi všichni víte, jak to dopadlo :-) Skok z 5 na 17 procent a křeslo primátora :-)",
+    "timestamp": "2026-09-02T17:01:40.227385+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2095084558601343139",
+    "author": "STAT2030",
+    "text": "@PiratskaStrana\n Odpovídat protiotázkou je trochu neseriózní, ale realitu neotočíte. Úřady se nepřipojily ne kvůli spokojenosti, ale ze strachu z totálního právního zmatku a dvojí evidence. Kdyby systém v praxi šlapal, nikdo by žádný bypass nevymýšlel a vláda by nemusela odvolávat",
+    "timestamp": "2026-09-02T17:01:39.755243+02:00",
+    "matched_keyword": "@PiratskaStrana"
+  },
+  {
+    "id": "2095084674649370883",
+    "author": "PMaslink64359",
+    "text": "By mě zajímalo, co dělali 3 roky ve vládě Piráti. Proti rusům udělali celostátně hovno, v Praze ještě větší hovno.\nVy padá to, že jsou Piráti tak nějak všeobecně na hovno.\nKecy a plky. Pokud se nehoní za koryty, nebo nežebrají o stovku.",
+    "timestamp": "2026-09-02T17:01:38.478127+02:00",
+    "matched_keyword": "Piráti"
+  },
+  {
+    "id": "2095086156299792752",
+    "author": "piratipraha",
+    "text": "A on byl Hřib 4 roky radní někde než kandidovat na primátora :) ? Nějak ta paralela úplně nesedí ",
+    "timestamp": "2026-09-02T17:01:38.194178+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2095086375682875834",
+    "author": "piratipraha",
+    "text": "Velice humorné ",
+    "timestamp": "2026-09-02T17:01:37.493073+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
     "id": "2095083063105495050",
     "author": "STAT2030",
     "text": "Ten systém v praxi stál, chyběly základní funkce a úřady po celé republice bily na poplach. Nazývat legislativní bypass populismem ve chvíli, kdy hrozilo kompletní zmrazení stavebního trhu, je absurdní.",
@@ -656,47 +698,5 @@
     "text": "Zásah. Potopeno ",
     "timestamp": "2026-09-02T10:01:43.174717+02:00",
     "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2094804084138168535",
-    "author": "WallaceMia7",
-    "text": "Juchelka je otrok ze sekty ANO. O ničem nerozhoduje, pouze plní příkazy šéfa sekty.",
-    "timestamp": "2026-09-02T10:01:42.746215+02:00",
-    "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2094804140605968412",
-    "author": "piratipraha",
-    "text": "Dobrý den, a to jich je tolik? Bikesharing využívá 111 tisíc unikátních uživatelů ",
-    "timestamp": "2026-09-02T10:01:42.460575+02:00",
-    "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2094804264824520986",
-    "author": "piratipraha",
-    "text": "Super, máme radost, že vám slouží.",
-    "timestamp": "2026-09-02T10:01:42.113621+02:00",
-    "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2094805438705353055",
-    "author": "olga_holubova",
-    "text": "My bohužel nevíme, co BIS dělá. Tipla bych si, že dělá svoji práci. Druhá věc je, jestli jí vláda naslouchá. Asi spíš naslouchá Vachatový. Blbý bude, až BIS zruší, nebo až ji přeobsadí nějakým proruským xindlem.",
-    "timestamp": "2026-09-02T10:01:41.775520+02:00",
-    "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2094805717786005506",
-    "author": "torquemada_2025",
-    "text": "Tak to nemám strach, že by nás denně neoblažovali svými bludy. A nikdy nezapomenou \"My Piráti, jen my Piráti, bez nás Pirátů ....\"\n...a já doplňuji: by bylo TAK krásně ...",
-    "timestamp": "2026-09-02T10:01:39.657392+02:00",
-    "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2094806638523744656",
-    "author": "FlyboyEda",
-    "text": "Už postavili piráti ty desítky tisíc bytů, co slibovali?",
-    "timestamp": "2026-09-02T10:01:39.336002+02:00",
-    "matched_keyword": "Piráti"
   }
 ]
