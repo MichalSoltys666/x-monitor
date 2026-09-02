@@ -1,5 +1,19 @@
 [
   {
+    "id": "2095093357227684012",
+    "author": "PiratskaStrana",
+    "text": "Tím, že jsme si nechali zpracovat posudky k autenticitě nahrávky o úplatcích, na které vystupovali radní ČT Pavel Matocha a Roman Bradáč.",
+    "timestamp": "2026-09-02T19:31:30.628417+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2095093727870038337",
+    "author": "PiratskaStrana",
+    "text": "Německo jasně pojmenovává viníka, zavírá ruský konzulát v Bonnu i Ruský dům v Berlíně a zpřísňuje kontroly. To je adekvátní reakce státu, který bere hrozbu vážně.",
+    "timestamp": "2026-09-02T19:31:29.733145+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
     "id": "2095092627494387783",
     "author": "MarekStonis",
     "text": "Podpořit inovace a podnikání = zrušení Inovačního institutu. Krom toho, že jeho prostřednictvím sají Piráti veřejné peníze, zůstávají po něm nesmysly typu konferencí o cirkulární ekonomice atd. Je to absurdní byrokratická hydra pro pirátské kamarády kamarádů.",
@@ -684,19 +698,5 @@
     "text": "Škoda že jste na to samé neměl koule vy pane Lipavský. Inu zkostnatělá ODS nejsou Piráti.",
     "timestamp": "2026-09-02T11:31:24.203463+02:00",
     "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2094819062840787034",
-    "author": "piratipraha",
-    "text": "Holubníky samozřejmě super, jen to dostupné bydlení v nich úplně nebude :(",
-    "timestamp": "2026-09-02T11:01:39.501527+02:00",
-    "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2094819503376875847",
-    "author": "piratipraha",
-    "text": "Zdravíme, tady pána blokujeme .",
-    "timestamp": "2026-09-02T11:01:38.923548+02:00",
-    "matched_keyword": "Obecná zmínka"
   }
 ]
