@@ -1,5 +1,26 @@
 [
   {
+    "id": "2095394015000576385",
+    "author": "KanalPrazsky",
+    "text": "Vládli jste 8 let, 2 volební období. Tohle je fakt neuvěřitelný, co předvádíte.",
+    "timestamp": "2026-09-03T12:31:29.241645+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2095395980099153951",
+    "author": "MarekChmel",
+    "text": "Myslim ze ne, tak jako mají své podporovatele, tak stejně jsou i běžní lidé, kterým by radši ruka upadla než volit piráty. Teď to vypadá že hlavní problém Prahy je nedostatek plováren a šašků s kleštěmi na zámky.",
+    "timestamp": "2026-09-03T12:31:29.009209+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2095397720500359565",
+    "author": "NislerovaTereza",
+    "text": "K tomuhle tvrzení by mě opravdu zajímaly argumenty, protože Piráti jsou jasně na straně pluralitní demokracie, ústavnosti, svobody projevu a lidských práv.",
+    "timestamp": "2026-09-03T12:31:28.669261+02:00",
+    "matched_keyword": "Piráti"
+  },
+  {
     "id": "2095390927174975661",
     "author": "jakub123rei",
     "text": "Neodpověděl jste na otázku a píšete něco jiného. Jste Pirát nebo máte od nich školení. \nTeflon a ignorace. Klasika.",
@@ -677,26 +698,5 @@
     "text": "The brutal anti-campaign by political competitors against the SPD is in full swing. Last night, they destroyed 6 of our advertising stands. Quite brutally—two were hacked apart with some machete or whatever. They hauled one away in a white van.\n It's sad that yesterday in a",
     "timestamp": "2026-09-03T01:01:30.975277+02:00",
     "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2095137883526971690",
-    "author": "PiratskaStrana",
-    "text": "Hnutí STAČILO! dnes nic nepředstavovalo.",
-    "timestamp": "2026-09-03T00:31:28.442322+02:00",
-    "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2095139624276381709",
-    "author": "VacDol",
-    "text": "Slogans from today's opposition actions and campaigns:  \nODS: We won't give them the Senate!  \nSTAN: It's time!  \nPiráti: We can do more!  \nLidovci: Hope begins today.",
-    "timestamp": "2026-09-03T00:31:28.171337+02:00",
-    "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2095140713155416565",
-    "author": "RomanTomek6",
-    "text": "Piráti jsou horší než komunisti.",
-    "timestamp": "2026-09-03T00:31:27.905047+02:00",
-    "matched_keyword": "Piráti"
   }
 ]
