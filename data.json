@@ -1,5 +1,75 @@
 [
   {
+    "id": "2118086163021922737",
+    "author": "danamajerova1",
+    "text": "To vypadá na Ševčíka",
+    "timestamp": "2026-11-06T09:01:53.767295+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2118095150496833865",
+    "author": "JindrichVicher",
+    "text": "To ale i Piráti a ODS.\nPokrytectví v plné palbě. \n",
+    "timestamp": "2026-11-06T09:01:53.452201+02:00",
+    "matched_keyword": "Piráti"
+  },
+  {
+    "id": "2118111113531597208",
+    "author": "JiriRandula",
+    "text": "Vám jsou přece také bližší piráti, než pravičáci.",
+    "timestamp": "2026-11-06T09:01:53.147364+02:00",
+    "matched_keyword": "Piráti"
+  },
+  {
+    "id": "2118116277583512062",
+    "author": "Margarethafiser",
+    "text": "Jako piráti, že?",
+    "timestamp": "2026-11-06T09:01:52.672478+02:00",
+    "matched_keyword": "Piráti"
+  },
+  {
+    "id": "2118120106341363730",
+    "author": "Vitek_H_B",
+    "text": "proč tomu debilovi odpovídáš?",
+    "timestamp": "2026-11-06T09:01:52.047045+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2118125680022126981",
+    "author": "Pep1no1",
+    "text": "Škoda, že v Brně nemají  stavební firmu \n@PiratskaStrana\n . Ti by to dokázali za 4 miliardy.",
+    "timestamp": "2026-11-06T09:01:51.810864+02:00",
+    "matched_keyword": "@PiratskaStrana"
+  },
+  {
+    "id": "2118132765400903961",
+    "author": "Karel_Oprchal",
+    "text": "Paráda, tím pádem vybírám STAN. Nebo ODS. Ještě to zvážím, podle toho, co mně nabídnou Piráti.",
+    "timestamp": "2026-11-06T09:01:51.557097+02:00",
+    "matched_keyword": "Piráti"
+  },
+  {
+    "id": "2118144927745888355",
+    "author": "Milo41409300",
+    "text": "Kolik už jste vybrali šmejdi?",
+    "timestamp": "2026-11-06T09:01:51.322282+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
+    "id": "2118150900103483710",
+    "author": "Bob386176",
+    "text": "Spíš Piráti ne?",
+    "timestamp": "2026-11-06T09:01:51.093403+02:00",
+    "matched_keyword": "Piráti"
+  },
+  {
+    "id": "2118227533619482925",
+    "author": "ElizabethBeeat",
+    "text": "Baví mě to.",
+    "timestamp": "2026-11-06T09:01:50.578355+02:00",
+    "matched_keyword": "Obecná zmínka"
+  },
+  {
     "id": "2118206250374828429",
     "author": "DanielBenes",
     "text": "Říká někdo kdo měl v programu v roce 2017 zrušení poplatků a při jejich zvyšování za minulé vlády ani nepípl. Stojanová se jen snaží , jako všichni piráti nahonit body a udržet se u státního cecku co to jde",
@@ -627,76 +697,6 @@
     "author": "StanCifka",
     "text": "Tržní přístup dopadl lépe než dotace. Chápu, že např. piráti jsou na straně dotací pro kulturu. U ODS tomu nerozumím.",
     "timestamp": "2026-11-04T00:01:54.705427+02:00",
-    "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2117408662536720562",
-    "author": "morticie_addams",
-    "text": "Piráti?Klidně všichni",
-    "timestamp": "2026-11-04T00:01:54.452427+02:00",
-    "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2117450918333755700",
-    "author": "LudmilaHub",
-    "text": "Hlavně ať tam nejsou Piráti",
-    "timestamp": "2026-11-04T00:01:54.173435+02:00",
-    "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2117492192730059165",
-    "author": "rcepcany",
-    "text": "My piráti... už jste toho předvedli dost",
-    "timestamp": "2026-11-04T00:01:53.516862+02:00",
-    "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2117502016247517599",
-    "author": "pirati_sck",
-    "text": "Samozřejmě, že máme lepší plán, jak zajistit transparentní financování ČT/ČRo. A světe div se, nepotřebujeme ho před nikým tajit, ani ho za nás nepsala AI, ani bychom ho nemuseli schvalovat pod rouškou tmy. V Česku se protestuje proti hulvátství, nekompetenci a rozkladu státu.",
-    "timestamp": "2026-11-04T00:01:53.163632+02:00",
-    "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2117338826154897845",
-    "author": "KleprlikZdenek",
-    "text": "ODS & Piráti (přesto to neprošlo)\nAutomatický přísun peněz: Rozpočet ČT by byl dán ZÁKONEM  stanoveným matematickým vzorcem navázaným na výkon ekonomiky (výnos DPH).",
-    "timestamp": "2026-11-03T23:02:00.693321+02:00",
-    "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2117340873574973657",
-    "author": "RichardSimunek",
-    "text": "ODS to ale neudělala, protože reflektovala vůli lidí. A Piráti, ti měli skvělý plán navázat příjmy veřejnoprávních médií na DPH. Naprostý automat bez závislosti na vládě i poslancích. To už ale vy neřeknete. Protože jste prolhaný až na kost. Jen lžete, lžete a lžete!",
-    "timestamp": "2026-11-03T23:02:00.407111+02:00",
-    "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2117342547123032222",
-    "author": "hvozdu",
-    "text": "Hele, ty ultrablbe. Došlo ti, že televize se dá sledovat třeba i na internetu? Že drtivá část aut má rádio, které poslouchá úplně každý? Že ODS a Piráti chtěli zrušit poplatky a navázat je na DPH? Že lidi už tě mají plný zuby?",
-    "timestamp": "2026-11-03T23:02:00.070653+02:00",
-    "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2117343231029452901",
-    "author": "xkovi",
-    "text": "Psala jste, že ANO získalo většinu.. A to není pravda.. Bylo nejsilnější stranou, ale na většinu to ani náhodou nestačilo. Muselo spojit síly s SPD a Motoristy, ale pořád platí, že voliči v celkem významné většině volili strany, co NECHTĚLY rušit poplatky (SPOLU, STAN, Piráti,",
-    "timestamp": "2026-11-03T23:01:59.732249+02:00",
-    "matched_keyword": "Piráti"
-  },
-  {
-    "id": "2117344162957992179",
-    "author": "PiratskaStrana",
-    "text": "Zdravíme hrdinu schovávajícího se za falešným účtem.",
-    "timestamp": "2026-11-03T23:01:59.458768+02:00",
-    "matched_keyword": "Obecná zmínka"
-  },
-  {
-    "id": "2117345027055902897",
-    "author": "Michael121166",
-    "text": "Piráti a ekonomická strategie? To je hodně špatný vtip. Vy jste republiku nakopli akorát tak do zdi a vaše vládnutí byla jedna velká blamáž. Neschopní neobolševici z kaváren, co v praxi totálně pohořeli, tady budou poučovat národ. Zabalte to a dejte lidem pokoj.",
-    "timestamp": "2026-11-03T23:01:59.089915+02:00",
     "matched_keyword": "Piráti"
   }
 ]
